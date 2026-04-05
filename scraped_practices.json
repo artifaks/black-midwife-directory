@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Example Scraped Practice",
+    "city": "Atlanta",
+    "state": "GA",
+    "practiceType": [
+      "Home Birth"
+    ],
+    "blackOwned": true
+  }
+]

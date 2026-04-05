@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources & Guides — Black Midwife Directory</title>
+  <meta name="description" content="Guides on Black maternal health, homebirth, choosing a midwife, insurance coverage, and more. Empowering Black families with knowledge for their birth journey." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://black-midwife-directory.netlify.app/blog.html" />
+  <meta property="og:title" content="Resources & Guides — Black Midwife Directory" />
+  <meta property="og:description" content="Guides on homebirth, choosing a midwife, insurance coverage, and more." />
+  <meta property="og:site_name" content="Black Midwife Directory" />
+  <meta property="og:image" content="https://black-midwife-directory.netlify.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="https://black-midwife-directory.netlify.app/blog.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container container">
+      <div class="logo">
+        <a href="index.html"><span class="logo-text">Midwife<span class="highlight">Directory</span></span></a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+        <a href="#" class="btn-primary">For Members</a>
+      </nav>
+      <div class="mobile-btns">
+        <button class="mobile-menu-btn mobile-nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav" hidden>
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="blog-hero">
+    <div class="container">
+      <h1 class="blog-hero-title">Resources & Guides</h1>
+      <p class="blog-hero-sub">Black maternal health, homebirth guides, midwifery care, and everything you need to build your birth team.</p>
+    </div>
+  </section>
+
+  <!-- Category Filter -->
+  <div class="container blog-filter-bar">
+    <button class="blog-cat-btn active" data-cat="all">All</button>
+    <button class="blog-cat-btn" data-cat="homebirth">Homebirth</button>
+    <button class="blog-cat-btn" data-cat="insurance">Insurance</button>
+    <button class="blog-cat-btn" data-cat="choosing">Choosing a Midwife</button>
+    <button class="blog-cat-btn" data-cat="postpartum">Postpartum</button>
+    <button class="blog-cat-btn" data-cat="maternal-health">Maternal Health</button>
+  </div>
+
+  <main class="container blog-main">
+    <div id="premiere-section">
+      <!-- JS injects premiere card -->
+    </div>
+    <div id="articles-grid" class="articles-grid">
+      <!-- JS injects article cards -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Midwife<span class="highlight">Directory</span></span>
+        <p class="footer-tagline">Connecting families with Black homebirth midwives across the United States.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Directory</h4>
+        <a href="index.html">Find a Midwife</a>
+        <a href="submit.html">List Your Practice</a>
+        <a href="blog.html">Resources</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Connected</h4>
+        <p>New listings, birth resources, and guides in your inbox.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Your email address" required />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+        <p id="newsletter-msg" class="newsletter-msg" hidden></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Black Midwife Directory. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Supabase (for newsletter) ──
+    const SUPABASE_URL = 'https://icpgljdwmtofmdeigrmr.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljcGdsamR3bXRvZm1kZWlncm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMjUwODYsImV4cCI6MjA5MDkwMTA4Nn0.o_RZfoUS6rZe4_7Ol9M6lQA8I75Z-CEQiWig5rGOP30';
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // ── Articles Data ──
+    const ARTICLES = [
+      {
+        slug: 'black-celebrities-maternal-health-stories',
+        title: 'When Fame Is Not Enough: Black Celebrities Who Faced Maternal Health Crises',
+        excerpt: 'From Serena Williams to Beyonce to Tori Bowie — these stories prove wealth and status cannot protect Black women from a broken maternal health system.',
+        category: 'maternal-health',
+        catLabel: 'Maternal Health',
+        date: '2026-04-04',
+        readTime: '12 min read',
+        color: '#c2185b',
+        image: 'https://images.pexels.com/photos/5063306/pexels-photo-5063306.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        premiere: true
+      },
+      {
+        slug: 'black-maternal-mortality-crisis',
+        title: 'The Black Maternal Mortality Crisis: What Every Family Should Know',
+        excerpt: 'Black women in America are three times more likely to die from pregnancy-related causes. Understanding the crisis is the first step toward changing it.',
+        category: 'maternal-health',
+        catLabel: 'Maternal Health',
+        date: '2026-04-05',
+        readTime: '10 min read',
+        color: '#c2185b',
+        image: 'https://images.pexels.com/photos/6991889/pexels-photo-6991889.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      {
+        slug: 'midwives-reducing-maternal-mortality',
+        title: 'How Black Midwives Are Reducing Maternal Mortality',
+        excerpt: 'Black midwives are on the front lines of the fight against maternal mortality, using culturally centered care to improve birth outcomes for Black families.',
+        category: 'maternal-health',
+        catLabel: 'Maternal Health',
+        date: '2026-03-28',
+        readTime: '9 min read',
+        color: '#c2185b',
+        image: 'https://images.pexels.com/photos/19596247/pexels-photo-19596247.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      {
+        slug: 'advocating-for-yourself-during-pregnancy',
+        title: 'Advocating for Yourself During Pregnancy as a Black Woman',
+        excerpt: 'Practical strategies for Black women to advocate for respectful, evidence-based care throughout pregnancy, birth, and the postpartum period.',
+        category: 'maternal-health',
+        catLabel: 'Maternal Health',
+        date: '2026-03-20',
+        readTime: '8 min read',
+        color: '#c2185b',
+        image: 'https://images.pexels.com/photos/6311269/pexels-photo-6311269.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      {
+        slug: 'what-to-expect-homebirth',
+        title: 'What to Expect During a Home Birth',
+        excerpt: 'A comprehensive guide to preparing for and experiencing a home birth, from prenatal visits through delivery and postpartum care.',
+        category: 'homebirth',
+        catLabel: 'Homebirth',
+        date: '2026-03-15',
+        readTime: '8 min read',
+        color: '#b85c38'
+      },
+      {
+        slug: 'choosing-right-midwife',
+        title: 'How to Choose the Right Midwife for You',
+        excerpt: 'Key questions to ask, credentials to verify, and factors to consider when selecting a midwife for your pregnancy and birth.',
+        category: 'choosing',
+        catLabel: 'Choosing a Midwife',
+        date: '2026-03-08',
+        readTime: '6 min read',
+        color: '#4a6741'
+      },
+      {
+        slug: 'insurance-guide-midwifery',
+        title: 'Insurance Coverage for Midwifery Care: A Complete Guide',
+        excerpt: 'Understanding Medicaid, private insurance, and out-of-pocket options for midwifery services, state by state.',
+        category: 'insurance',
+        catLabel: 'Insurance',
+        date: '2026-02-28',
+        readTime: '10 min read',
+        color: '#2d6a8a'
+      },
+      {
+        slug: 'benefits-black-midwife',
+        title: 'Why Culturally Concordant Care Matters',
+        excerpt: 'Research shows that Black mothers who receive care from Black midwives experience better birth outcomes. Here is what the evidence says.',
+        category: 'homebirth',
+        catLabel: 'Homebirth',
+        date: '2026-02-20',
+        readTime: '7 min read',
+        color: '#5e3a5a'
+      },
+      {
+        slug: 'postpartum-first-weeks',
+        title: 'The First Six Weeks: A Postpartum Guide',
+        excerpt: 'What to expect in the weeks after birth, from physical recovery to emotional health, breastfeeding support, and newborn care.',
+        category: 'postpartum',
+        catLabel: 'Postpartum',
+        date: '2026-02-12',
+        readTime: '9 min read',
+        color: '#c9973a'
+      },
+      {
+        slug: 'birth-plan-template',
+        title: 'Creating Your Birth Plan: A Step-by-Step Template',
+        excerpt: 'A practical guide to writing a birth plan that communicates your wishes clearly to your midwife and birth team.',
+        category: 'homebirth',
+        catLabel: 'Homebirth',
+        date: '2026-02-05',
+        readTime: '5 min read',
+        color: '#b85c38'
+      },
+      {
+        slug: 'medicaid-homebirth-coverage',
+        title: 'Does Medicaid Cover Home Birth? A State-by-State Breakdown',
+        excerpt: 'Medicaid coverage for homebirth midwifery varies widely by state. Find out what is covered where you live.',
+        category: 'insurance',
+        catLabel: 'Insurance',
+        date: '2026-01-28',
+        readTime: '8 min read',
+        color: '#2d6a8a'
+      },
+      {
+        slug: 'questions-ask-midwife',
+        title: '15 Questions to Ask Your Potential Midwife',
+        excerpt: 'From emergency protocols to philosophy of care, these essential questions will help you find the perfect match.',
+        category: 'choosing',
+        catLabel: 'Choosing a Midwife',
+        date: '2026-01-20',
+        readTime: '6 min read',
+        color: '#4a6741'
+      },
+      {
+        slug: 'postpartum-warning-signs',
+        title: 'Postpartum Warning Signs Every Black Mother Should Know',
+        excerpt: 'Know the critical postpartum warning signs that require immediate medical attention. Black women face disproportionate risk in the weeks and months after birth.',
+        category: 'maternal-health',
+        catLabel: 'Maternal Health',
+        date: '2026-03-12',
+        readTime: '7 min read',
+        color: '#c2185b',
+        image: 'https://images.pexels.com/photos/6393175/pexels-photo-6393175.jpeg?auto=compress&cs=tinysrgb&w=600'
+      },
+      {
+        slug: 'black-women-health-disparities-pregnancy',
+        title: 'Health Disparities Facing Black Women Before, During, and After Pregnancy',
+        excerpt: 'From fibroids to preeclampsia to postpartum depression, Black women face unique health challenges throughout the reproductive journey.',
+        category: 'maternal-health',
+        catLabel: 'Maternal Health',
+        date: '2026-03-05',
+        readTime: '9 min read',
+        color: '#c2185b',
+        image: 'https://images.pexels.com/photos/7353060/pexels-photo-7353060.jpeg?auto=compress&cs=tinysrgb&w=600'
+      }
+    ];
+
+    // ── Render ──
+    const articlesGrid = document.getElementById('articles-grid');
+    const premiereSection = document.getElementById('premiere-section');
+    let activeCategory = 'all';
+
+    function renderArticles() {
+      const all = activeCategory === 'all'
+        ? ARTICLES
+        : ARTICLES.filter(a => a.category === activeCategory);
+
+      // Premiere card (only show on "All" or matching category)
+      const premiere = all.find(a => a.premiere);
+      const rest = all.filter(a => !a.premiere);
+
+      if (premiere && premiereSection) {
+        premiereSection.innerHTML = `
+          <article class="premiere-card" onclick="window.location.href='blog/${premiere.slug}.html'">
+            <div class="premiere-card-img">
+              <img src="${premiere.image}" alt="${premiere.title}" loading="lazy" />
+              <div class="premiere-card-overlay">
+                <span class="premiere-badge">Featured</span>
+                <span class="article-card-cat">${premiere.catLabel}</span>
+              </div>
+            </div>
+            <div class="premiere-card-body">
+              <h2 class="premiere-card-title">${premiere.title}</h2>
+              <p class="premiere-card-excerpt">${premiere.excerpt}</p>
+              <div class="article-card-meta">
+                <span>${new Date(premiere.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                <span>${premiere.readTime}</span>
+              </div>
+              <span class="premiere-read-link">Read Article &rarr;</span>
+            </div>
+          </article>`;
+        premiereSection.hidden = false;
+      } else if (premiereSection) {
+        premiereSection.innerHTML = '';
+        premiereSection.hidden = true;
+      }
+
+      if (!rest.length && !premiere) {
+        articlesGrid.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;padding:40px 0">No articles in this category yet. Check back soon!</p>';
+        return;
+      }
+
+      articlesGrid.innerHTML = rest.map(a => `
+        <article class="article-card ${a.image ? 'has-image' : ''}" onclick="window.location.href='blog/${a.slug}.html'">
+          ${a.image
+            ? `<div class="article-card-img"><img src="${a.image}" alt="${a.title}" loading="lazy" /><span class="article-card-cat">${a.catLabel}</span></div>`
+            : `<div class="article-card-color" style="background:${a.color}"><span class="article-card-cat">${a.catLabel}</span></div>`
+          }
+          <div class="article-card-body">
+            <h3 class="article-card-title">${a.title}</h3>
+            <p class="article-card-excerpt">${a.excerpt}</p>
+            <div class="article-card-meta">
+              <span>${new Date(a.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+              <span>${a.readTime}</span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Category filter
+    document.querySelectorAll('.blog-cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.blog-cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.cat;
+        renderArticles();
+      });
+    });
+
+    renderArticles();
+
+    // ── Mobile Nav ──
+    document.querySelector('.mobile-nav-toggle')?.addEventListener('click', function() {
+      const nav = document.querySelector('.mobile-nav');
+      nav.classList.toggle("is-open");
+    });
+
+    // ── Newsletter ──
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterMsg  = document.getElementById('newsletter-msg');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email')?.value?.trim();
+        if (!email) return;
+        const btn = newsletterForm.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Subscribing...';
+        try {
+          const { error } = await db.from('newsletter_subscribers').insert([{ email }]);
+          if (error && error.code === '23505') {
+            newsletterMsg.textContent = "You're already subscribed!";
+            newsletterMsg.className = 'newsletter-msg newsletter-msg--info';
+          } else if (error) {
+            throw error;
+          } else {
+            newsletterMsg.textContent = "Welcome! You're now subscribed.";
+            newsletterMsg.className = 'newsletter-msg newsletter-msg--success';
+            newsletterForm.reset();
+          }
+        } catch (err) {
+          newsletterMsg.textContent = 'Something went wrong. Please try again.';
+          newsletterMsg.className = 'newsletter-msg newsletter-msg--error';
+        } finally {
+          newsletterMsg.hidden = false;
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

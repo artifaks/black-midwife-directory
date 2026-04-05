@@ -1,0 +1,3140 @@
+[
+  {
+    "id": 1,
+    "name": "Nia Village Midwifery",
+    "abbr": "NV",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30301",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Medicaid",
+      "Self Pay",
+      "Private Insurance"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "(404) 555-0182",
+    "email": "info@niamidwifery.com",
+    "website": "https://niamidwifery.com",
+    "bio": "Nia Village Midwifery provides full-spectrum homebirth care rooted in African birth traditions and evidence-based practice. Serving Atlanta families with love and expertise for over 12 years.",
+    "specialties": "Water birth, VBAC support, herbal remedies, birth ceremonies",
+    "color": "#b85c38"
+  },
+  {
+    "id": 2,
+    "name": "Roots & Wings Birth Collective",
+    "abbr": "RW",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "77001",
+    "practiceType": "Freestanding Birth Center",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum",
+      "Gynecology"
+    ],
+    "payment": [
+      "Medicaid",
+      "Medicare",
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "(713) 555-0244",
+    "email": "hello@rootswingsbirth.com",
+    "website": "https://rootswingsbirth.com",
+    "bio": "A Black woman-owned birth center offering holistic, family-centered care in a warm, home-like environment. We honor the wisdom of ancestral birth knowledge alongside modern midwifery practice.",
+    "specialties": "Birthing suites, sibling-present births, postpartum healing circles, placenta services",
+    "color": "#4a6741"
+  },
+  {
+    "id": 3,
+    "name": "Sankofa Midwife Care",
+    "abbr": "SM",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60601",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay",
+      "Private Insurance"
+    ],
+    "blackOwned": true,
+    "accepting": false,
+    "phone": "(312) 555-0391",
+    "email": "care@sankofamidwife.com",
+    "website": "https://sankofamidwife.com",
+    "bio": "Sankofa means 'go back and fetch it' — we bring ancestral birth wisdom forward to serve Black families with the dignity and care they deserve. Specializing in high-risk and VBAC homebirths.",
+    "specialties": "High-risk homebirth, VBAC, doula integration, sliding scale fees available",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 4,
+    "name": "Uhuru Birth Services",
+    "abbr": "UB",
+    "city": "Detroit",
+    "state": "MI",
+    "zip": "48201",
+    "practiceType": "Community Health Clinic",
+    "care": [
+      "Prenatal Care",
+      "Family Planning/Contraception",
+      "Gynecology",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Medicaid",
+      "Medicare",
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "(313) 555-0158",
+    "email": "care@uhurubirth.org",
+    "website": "https://uhurubirth.org",
+    "bio": "Uhuru serves Detroit's Black community with comprehensive maternal and reproductive health care, emphasizing community education, birth justice advocacy, and multigenerational healing.",
+    "specialties": "Community workshops, birth justice advocacy, teen parent support, group prenatal care",
+    "color": "#c9973a"
+  },
+  {
+    "id": 5,
+    "name": "Ashé Midwifery & Wellness",
+    "abbr": "AM",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20001",
+    "practiceType": "Private Office",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Gynecology",
+      "Family Planning/Contraception"
+    ],
+    "payment": [
+      "Private Insurance",
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "(202) 555-0473",
+    "email": "ashé@ashemidwifery.com",
+    "website": "https://ashemidwifery.com",
+    "bio": "Ashé Midwifery offers boutique, relationship-based midwifery care for Washington DC families seeking a personalized, culturally affirming birth experience guided by a board-certified CNM.",
+    "specialties": "Homebirth, birth center transfers, wellness care, luxury postpartum planning",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 6,
+    "name": "Mama Earth Birth Collective",
+    "abbr": "ME",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90001",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Medicaid",
+      "Self Pay",
+      "Private Insurance"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "(323) 555-0612",
+    "email": "info@mamaearthbirth.com",
+    "website": "https://mamaearthbirth.com",
+    "bio": "Mama Earth serves Southern California's Black birthing community with an intersectional lens, honoring every family's journey with compassion, expertise, and deep cultural understanding.",
+    "specialties": "Waterbirth, placenta services, multilingual support (Spanish/Haitian Creole), LGBTQ+ affirming",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 7,
+    "name": "St Clair Shores OBGYN",
+    "abbr": "SC",
+    "city": "Saint Clair Shores",
+    "state": "MI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "St Clair Shores OBGYNMichigan — a midwifery practice in View, Saint Clair Shores.",
+    "specialties": "",
+    "color": "#b85c38"
+  },
+  {
+    "id": 8,
+    "name": "Holistic Heritage Homebirth",
+    "abbr": "HH",
+    "city": "Tomball",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Holistic Heritage HomebirthTexas — a midwifery practice in View, Tomball.",
+    "specialties": "",
+    "color": "#4a6741"
+  },
+  {
+    "id": 9,
+    "name": "M Health Fairview Center for Women-Edina",
+    "abbr": "MH",
+    "city": "Edina",
+    "state": "MN",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "M Health Fairview Center for Women-EdinaMinnesota — a midwifery practice in View, Edina.",
+    "specialties": "",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 10,
+    "name": "Center for Women's Health",
+    "abbr": "CF",
+    "city": "Richmond",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Center for Women's HealthTexas — a midwifery practice in View, Richmond.",
+    "specialties": "",
+    "color": "#c9973a"
+  },
+  {
+    "id": 11,
+    "name": "Aid to Women Center",
+    "abbr": "AT",
+    "city": "Chandler",
+    "state": "AZ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Aid to Women CenterArizona — a midwifery practice in View, Chandler.",
+    "specialties": "",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 12,
+    "name": "Integrative Healthcare For Women",
+    "abbr": "IH",
+    "city": "Leesburg",
+    "state": "VA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Integrative Healthcare For WomenVirginia — a midwifery practice in View, Leesburg.",
+    "specialties": "",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 13,
+    "name": "Second Spring Midlife Women's Health",
+    "abbr": "SS",
+    "city": "Napa",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Second Spring Midlife Women's HealthCalifornia — a midwifery practice in View, Napa.",
+    "specialties": "",
+    "color": "#6b4226"
+  },
+  {
+    "id": 14,
+    "name": "Northwestern Medicine Certified Nurse Midwives",
+    "abbr": "NM",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Northwestern Medicine Certified Nurse MidwivesIllinois — a midwifery practice in View, Chicago.",
+    "specialties": "",
+    "color": "#3a6b5e"
+  },
+  {
+    "id": 15,
+    "name": "WHA Midwives LLC",
+    "abbr": "WM",
+    "city": "New Haven",
+    "state": "CT",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "WHA Midwives LLCConnecticut — a midwifery practice in View, New Haven.",
+    "specialties": "",
+    "color": "#7a4a7a"
+  },
+  {
+    "id": 16,
+    "name": "St Joseph’s Midwifery",
+    "abbr": "SJ",
+    "city": "Paterson",
+    "state": "NJ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "St Joseph’s MidwiferyNew Jersey — a midwifery practice in View, Paterson.",
+    "specialties": "",
+    "color": "#b85c38"
+  },
+  {
+    "id": 17,
+    "name": "Henry Ford West Bloomfield Nurse Midwifery",
+    "abbr": "HF",
+    "city": "West Bloomfield",
+    "state": "MI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Henry Ford West Bloomfield Nurse MidwiferyMichigan — a midwifery practice in View, West Bloomfield.",
+    "specialties": "",
+    "color": "#4a6741"
+  },
+  {
+    "id": 18,
+    "name": "Hibiscus Women's Care",
+    "abbr": "HW",
+    "city": "Melbourne",
+    "state": "FL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Hibiscus Women's CareFlorida — a midwifery practice in View, Melbourne.",
+    "specialties": "",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 19,
+    "name": "Qavah Midwifery PLLC",
+    "abbr": "QM",
+    "city": "Olean",
+    "state": "NY",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Qavah Midwifery PLLCNew York — a midwifery practice in View, Olean.",
+    "specialties": "",
+    "color": "#c9973a"
+  },
+  {
+    "id": 20,
+    "name": "University of Arkansas for Medical Sciences (UAMS) Health - Women's Center",
+    "abbr": "UO",
+    "city": "Little Rock",
+    "state": "AR",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "University of Arkansas for Medical Sciences (UAMS) Health - Women's CenterArkansas — a midwifery practice in View, Little Rock.",
+    "specialties": "",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 21,
+    "name": "Midwives of San Francisco General Hospital",
+    "abbr": "MO",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Midwives of San Francisco General HospitalCalifornia — a midwifery practice in View, San Francisco.",
+    "specialties": "",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 22,
+    "name": "Stellis Health, PA",
+    "abbr": "SH",
+    "city": "Monticello",
+    "state": "MN",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Stellis Health, PAMinnesota — a midwifery practice in View, Monticello.",
+    "specialties": "",
+    "color": "#6b4226"
+  },
+  {
+    "id": 23,
+    "name": "Sunflower OBGYN",
+    "abbr": "SO",
+    "city": "Great Neck",
+    "state": "NY",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Sunflower OBGYNNew York — a midwifery practice in View, Great Neck.",
+    "specialties": "",
+    "color": "#3a6b5e"
+  },
+  {
+    "id": 24,
+    "name": "Quilted Health Spokane",
+    "abbr": "QH",
+    "city": "Spokane",
+    "state": "WA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Quilted Health SpokaneWashington — a midwifery practice in View, Spokane.",
+    "specialties": "",
+    "color": "#7a4a7a"
+  },
+  {
+    "id": 25,
+    "name": "WomanCare",
+    "abbr": "W",
+    "city": "Arlington Heights",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "WomanCareIllinois — a midwifery practice in View, Arlington Heights.",
+    "specialties": "",
+    "color": "#b85c38"
+  },
+  {
+    "id": 26,
+    "name": "Trinity Health IHA Medical Group Nurse Midwives Domino's Farms",
+    "abbr": "TH",
+    "city": "Ann Arbor",
+    "state": "MI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Trinity Health IHA Medical Group Nurse Midwives Domino's FarmsMichigan — a midwifery practice in View, Ann Arbor.",
+    "specialties": "",
+    "color": "#4a6741"
+  },
+  {
+    "id": 27,
+    "name": "Dana Perlman Studio",
+    "abbr": "DP",
+    "city": "Jenkintown",
+    "state": "PA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Dana Perlman StudioPennsylvania — a midwifery practice in View, Jenkintown.",
+    "specialties": "",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 28,
+    "name": "VCU Midwifery",
+    "abbr": "VM",
+    "city": "Richmond",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "VCU MidwiferyVirginia — a midwifery practice in View, Richmond.",
+    "specialties": "",
+    "color": "#c9973a"
+  },
+  {
+    "id": 29,
+    "name": "Ocean Gynecological & Obstetrical Associates",
+    "abbr": "OG",
+    "city": "Lakewood",
+    "state": "NJ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Ocean Gynecological & Obstetrical AssociatesNew Jersey — a midwifery practice in View, Lakewood.",
+    "specialties": "",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 30,
+    "name": "Baylor St. Luke's Medical Group",
+    "abbr": "BS",
+    "city": "Lufkin",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Baylor St. Luke's Medical GroupTexas — a midwifery practice in View, Lufkin.",
+    "specialties": "",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 31,
+    "name": "CHI Health Clinic Midwifery - Lincoln",
+    "abbr": "CH",
+    "city": "Lincoln",
+    "state": "NE",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "CHI Health Clinic Midwifery - Lincoln, NENebraska — a midwifery practice in View, Lincoln.",
+    "specialties": "",
+    "color": "#6b4226"
+  },
+  {
+    "id": 32,
+    "name": "Aspen Midwifery",
+    "abbr": "AM",
+    "city": "Flagstaff",
+    "state": "AZ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Aspen MidwiferyArizona — a midwifery practice in View, Flagstaff.",
+    "specialties": "",
+    "color": "#3a6b5e"
+  },
+  {
+    "id": 33,
+    "name": "Seventh Moon ~ Homebirth Midwifery Services",
+    "abbr": "SM",
+    "city": "Ocean Grove",
+    "state": "NJ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": false,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "",
+    "bio": "Seventh Moon ~ Homebirth Midwifery ServicesNew Jersey — a midwifery practice in View, Ocean Grove.",
+    "specialties": "",
+    "color": "#7a4a7a"
+  },
+  {
+    "id": 34,
+    "name": "Crown Of Glory Birth Services",
+    "abbr": "CO",
+    "city": "Birmingham",
+    "state": "AL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2058941191",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#b85c38"
+  },
+  {
+    "id": 35,
+    "name": "Over The Moon Midwifery",
+    "abbr": "OT",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6026416734",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4a6741"
+  },
+  {
+    "id": 36,
+    "name": "Rah Midwifery",
+    "abbr": "RM",
+    "city": "Glendale",
+    "state": "AZ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 4807446938",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 37,
+    "name": "Bella Women’S Care",
+    "abbr": "BW",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6022402401",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#c9973a"
+  },
+  {
+    "id": 38,
+    "name": "Modaba LLC",
+    "abbr": "ML",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6027108212",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 39,
+    "name": "The Midwives Garden",
+    "abbr": "TM",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 623-292-7511",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 40,
+    "name": "Birthstone Midwifery",
+    "abbr": "BM",
+    "city": "Winchester",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 951-481-1715",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6b4226"
+  },
+  {
+    "id": 41,
+    "name": "Kaiayo Z Shatteen",
+    "abbr": "KZ",
+    "city": "Oakland",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#3a6b5e"
+  },
+  {
+    "id": 42,
+    "name": "Kindred Space La",
+    "abbr": "KS",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 323-381-5511",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#7a4a7a"
+  },
+  {
+    "id": 43,
+    "name": "Allegra Hill",
+    "abbr": "AH",
+    "city": "Ladera Heights",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 323-313-2388",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#a0522d"
+  },
+  {
+    "id": 44,
+    "name": "Aminah Sacred Birthkeeper",
+    "abbr": "AS",
+    "city": "Richmond",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6192011643",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2e5e4e"
+  },
+  {
+    "id": 45,
+    "name": "Celest Winfrey",
+    "abbr": "CW",
+    "city": "Claremont",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 19098443019",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8b4513"
+  },
+  {
+    "id": 46,
+    "name": "Dr Nikki Christian Genius",
+    "abbr": "DN",
+    "city": "Lancaster",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 4108550060",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#556b2f"
+  },
+  {
+    "id": 47,
+    "name": "Eisner Health",
+    "abbr": "EH",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2137475542",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6a5acd"
+  },
+  {
+    "id": 48,
+    "name": "Blue Lotus Homebirth Services",
+    "abbr": "BL",
+    "city": "Fairfield",
+    "state": "CT",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 8453867600",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#cd853f"
+  },
+  {
+    "id": 49,
+    "name": "Ubuntu Black Family Wellness Collective",
+    "abbr": "UB",
+    "city": "Wilmington",
+    "state": "DE",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6158307722",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#708090"
+  },
+  {
+    "id": 50,
+    "name": "Aware Childbirth",
+    "abbr": "AC",
+    "city": "Melbourne",
+    "state": "FL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 9176743072",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#9b4d3a"
+  },
+  {
+    "id": 51,
+    "name": "Birthways Family Birth Center",
+    "abbr": "BF",
+    "city": "Sarasota",
+    "state": "FL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 9413662229",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4b7f52"
+  },
+  {
+    "id": 52,
+    "name": "Childbirth Options LLC",
+    "abbr": "CO",
+    "city": "Wesley Chapel",
+    "state": "FL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 8133816430",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#704214"
+  },
+  {
+    "id": 53,
+    "name": "Midwife360 LLC",
+    "abbr": "ML",
+    "city": "West Palm Beach",
+    "state": "FL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 5617051022",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2f4f4f"
+  },
+  {
+    "id": 54,
+    "name": "Milton Memorial Birthing Center",
+    "abbr": "MM",
+    "city": "Laurel Hill",
+    "state": "FL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 850-834-2946",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8b0000"
+  },
+  {
+    "id": 55,
+    "name": "Birth In The Tradition",
+    "abbr": "BI",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 770-997-7088",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#483d8b"
+  },
+  {
+    "id": 56,
+    "name": "Birth Connections",
+    "abbr": "BC",
+    "city": "Decatur",
+    "state": "GA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 443-424-2229",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#b8860b"
+  },
+  {
+    "id": 57,
+    "name": "Abundance Birth Care Consulting",
+    "abbr": "AB",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 770-7-282-4719",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#006400"
+  },
+  {
+    "id": 58,
+    "name": "Abundance Birth Care And Consulting",
+    "abbr": "AB",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 404-805-2059",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#b85c38"
+  },
+  {
+    "id": 59,
+    "name": "Brittany Ellison CNM DNP",
+    "abbr": "BE",
+    "city": "Roswell",
+    "state": "GA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 7705212229",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4a6741"
+  },
+  {
+    "id": 60,
+    "name": "Mamanasrah Annor",
+    "abbr": "MA",
+    "city": "College Park",
+    "state": "GA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 404-447-2722",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 61,
+    "name": "Miri S",
+    "abbr": "MS",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#c9973a"
+  },
+  {
+    "id": 62,
+    "name": "Hale Kealaula LLC",
+    "abbr": "HK",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 8084456248",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 63,
+    "name": "Frances Harris 1379",
+    "abbr": "FH",
+    "city": "Boise",
+    "state": "ID",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2083021200",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 64,
+    "name": "Nikki Helms",
+    "abbr": "NH",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 619-964-3901",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6b4226"
+  },
+  {
+    "id": 65,
+    "name": "Profound Birth",
+    "abbr": "PB",
+    "city": "Oswego",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#3a6b5e"
+  },
+  {
+    "id": 66,
+    "name": "Soulful Doulas",
+    "abbr": "SD",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 773-669-6730",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#7a4a7a"
+  },
+  {
+    "id": 67,
+    "name": "Chicago Nurse Midwife LLC 2215",
+    "abbr": "CN",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 708-762-3322",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#a0522d"
+  },
+  {
+    "id": 68,
+    "name": "Chicago Nurse Midwife LLC",
+    "abbr": "CN",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 7087623322",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2e5e4e"
+  },
+  {
+    "id": 69,
+    "name": "Ellen Solis",
+    "abbr": "ES",
+    "city": "Urbana",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 217-383-6434",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8b4513"
+  },
+  {
+    "id": 70,
+    "name": "University Of Chicago Medical Center Midwives",
+    "abbr": "UO",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#556b2f"
+  },
+  {
+    "id": 71,
+    "name": "Amanda Chandler",
+    "abbr": "AC",
+    "city": "Hanover",
+    "state": "IN",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 8125991314",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6a5acd"
+  },
+  {
+    "id": 72,
+    "name": "P Y O B E With Mama Char",
+    "abbr": "PY",
+    "city": "Baton Rouge",
+    "state": "LA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: (225) 776-0277",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#cd853f"
+  },
+  {
+    "id": 73,
+    "name": "Shatamia Webb",
+    "abbr": "SW",
+    "city": "Lafayette",
+    "state": "LA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 337-781-1667",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#708090"
+  },
+  {
+    "id": 74,
+    "name": "Tam Pierre",
+    "abbr": "TP",
+    "city": "New Orleans",
+    "state": "LA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 5042410105",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#9b4d3a"
+  },
+  {
+    "id": 75,
+    "name": "Hadassah Bellot",
+    "abbr": "HB",
+    "city": "Upper Marlboro",
+    "state": "MD",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6466859001",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4b7f52"
+  },
+  {
+    "id": 76,
+    "name": "My Way Birth And Women S Services LLC",
+    "abbr": "MW",
+    "city": "Hanover",
+    "state": "MD",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 240-380-9051",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#704214"
+  },
+  {
+    "id": 77,
+    "name": "Trusting Hands Midwifery",
+    "abbr": "TH",
+    "city": "Baltimore",
+    "state": "MD",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2408102254",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2f4f4f"
+  },
+  {
+    "id": 78,
+    "name": "Roots Midwifery LLC",
+    "abbr": "RM",
+    "city": "Brookline",
+    "state": "MA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 617-413-8300",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8b0000"
+  },
+  {
+    "id": 79,
+    "name": "Radicle Midwifery",
+    "abbr": "RM",
+    "city": "Detroit",
+    "state": "MI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 4693890080",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#483d8b"
+  },
+  {
+    "id": 80,
+    "name": "Angela Thornton",
+    "abbr": "AT",
+    "city": "Detroit",
+    "state": "MI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#b8860b"
+  },
+  {
+    "id": 81,
+    "name": "Ashley Jungjohan Lm Cpm",
+    "abbr": "AJ",
+    "city": "Kalamazoo",
+    "state": "MI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2695999535",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#006400"
+  },
+  {
+    "id": 82,
+    "name": "Gianna Fay",
+    "abbr": "GF",
+    "city": "Detroit",
+    "state": "MI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#b85c38"
+  },
+  {
+    "id": 83,
+    "name": "Metro Midwifery",
+    "abbr": "MM",
+    "city": "Saint Paul",
+    "state": "MN",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6122758438",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4a6741"
+  },
+  {
+    "id": 84,
+    "name": "Southern Birthing Solutions LLC",
+    "abbr": "SB",
+    "city": "Terry",
+    "state": "MS",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: +1 (601) 473-1964",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 85,
+    "name": "Blooming Moon Midwifery",
+    "abbr": "BM",
+    "city": "Tupelo",
+    "state": "MS",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 662-2694643",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#c9973a"
+  },
+  {
+    "id": 86,
+    "name": "Jamaa Birth Village",
+    "abbr": "JB",
+    "city": "Ferguson",
+    "state": "MO",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 314-643-7703",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 87,
+    "name": "Midwife Home Birth Nh Birth Cottage",
+    "abbr": "MH",
+    "city": "Milford",
+    "state": "NH",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 603 673-6010",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 88,
+    "name": "Dyekora Sumda Midwifery Services",
+    "abbr": "DS",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 718-573-2432",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6b4226"
+  },
+  {
+    "id": 89,
+    "name": "Margaret Johnson",
+    "abbr": "MJ",
+    "city": "Queens",
+    "state": "NY",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 5163027920",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#3a6b5e"
+  },
+  {
+    "id": 90,
+    "name": "Redeemed Creations Midwifery Services PLLC 1398",
+    "abbr": "RC",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 3476631700",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#7a4a7a"
+  },
+  {
+    "id": 91,
+    "name": "Salwaa Health Midwifery Services",
+    "abbr": "SH",
+    "city": "Roosevelt",
+    "state": "NY",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 631-647-0085",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#a0522d"
+  },
+  {
+    "id": 92,
+    "name": "Gentle Spirit Home Birth Midwifery Service",
+    "abbr": "GS",
+    "city": "Charlotte",
+    "state": "NC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 201-304-3248",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2e5e4e"
+  },
+  {
+    "id": 93,
+    "name": "Providence Obgyn",
+    "abbr": "PO",
+    "city": "Charlotte",
+    "state": "NC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 704-316-3148",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8b4513"
+  },
+  {
+    "id": 94,
+    "name": "Yemarishet Macharia",
+    "abbr": "YM",
+    "city": "Durham Tulsa",
+    "state": "NC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 9189480030",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#556b2f"
+  },
+  {
+    "id": 95,
+    "name": "Zebulon Birth Wellness",
+    "abbr": "ZB",
+    "city": "Zebulon",
+    "state": "NC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 9192718731",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6a5acd"
+  },
+  {
+    "id": 96,
+    "name": "The Birth Tribe Cle LLC",
+    "abbr": "TB",
+    "city": "Cleveland",
+    "state": "OH",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 216-3920942",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#cd853f"
+  },
+  {
+    "id": 97,
+    "name": "Five Sankofa 3130",
+    "abbr": "FS",
+    "city": "Cleveland",
+    "state": "OH",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2163920942",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#708090"
+  },
+  {
+    "id": 98,
+    "name": "Labor In Love Midwifery",
+    "abbr": "LI",
+    "city": "Canton",
+    "state": "OH",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 3302653240",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#9b4d3a"
+  },
+  {
+    "id": 99,
+    "name": "Crystal Hrestak",
+    "abbr": "CH",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 7175001192",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4b7f52"
+  },
+  {
+    "id": 100,
+    "name": "B2b Holistic Care",
+    "abbr": "BH",
+    "city": "Columbia",
+    "state": "SC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 3366093560",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#704214"
+  },
+  {
+    "id": 101,
+    "name": "De La Flor Midwifery",
+    "abbr": "DL",
+    "city": "Columbia",
+    "state": "SC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6163751727",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2f4f4f"
+  },
+  {
+    "id": 102,
+    "name": "Genesis Birth And Wellness",
+    "abbr": "GB",
+    "city": "Greenville",
+    "state": "SC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 8645658646",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8b0000"
+  },
+  {
+    "id": 103,
+    "name": "Ginnell Gibbs",
+    "abbr": "GG",
+    "city": "Charleston",
+    "state": "SC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 8436681178",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#483d8b"
+  },
+  {
+    "id": 104,
+    "name": "Rhasauna Pierce",
+    "abbr": "RP",
+    "city": "Sumter",
+    "state": "SC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 5714990856",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#b8860b"
+  },
+  {
+    "id": 105,
+    "name": "Tolewa Oyewole",
+    "abbr": "TO",
+    "city": "Beaufort",
+    "state": "SC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6787208533",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#006400"
+  },
+  {
+    "id": 106,
+    "name": "Well Body And Birth",
+    "abbr": "WB",
+    "city": "Indian Land",
+    "state": "SC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#b85c38"
+  },
+  {
+    "id": 107,
+    "name": "Nikia Grayson",
+    "abbr": "NG",
+    "city": "Memphis",
+    "state": "TN",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2025284677",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4a6741"
+  },
+  {
+    "id": 108,
+    "name": "Yetu Village Midwifery",
+    "abbr": "YV",
+    "city": "Clarksville",
+    "state": "TN",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 9314443562",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#5e3a5a"
+  },
+  {
+    "id": 109,
+    "name": "Ashley Greene CNM",
+    "abbr": "AG",
+    "city": "Desoto",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: (972) 827-7689",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#c9973a"
+  },
+  {
+    "id": 110,
+    "name": "San Antonio Nurse Midwife",
+    "abbr": "SA",
+    "city": "San Antonio",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 210-901-9082",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2d6a8a"
+  },
+  {
+    "id": 111,
+    "name": "Adrian Mills APRN CNM",
+    "abbr": "AM",
+    "city": "Desoto",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: (214)302-7142",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8a3a5a"
+  },
+  {
+    "id": 112,
+    "name": "Amena Idir Midwifery",
+    "abbr": "AI",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 832-308-0100",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6b4226"
+  },
+  {
+    "id": 113,
+    "name": "Birth Services By Tiffany",
+    "abbr": "BS",
+    "city": "El Paso",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6163751727",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#3a6b5e"
+  },
+  {
+    "id": 114,
+    "name": "Eden S Garden Services",
+    "abbr": "ES",
+    "city": "Richmond",
+    "state": "TX",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 8324875773",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#7a4a7a"
+  },
+  {
+    "id": 115,
+    "name": "Carmen Mojica",
+    "abbr": "CM",
+    "city": "Hampton",
+    "state": "VA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 3155611600",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#a0522d"
+  },
+  {
+    "id": 116,
+    "name": "Monifa Dukes",
+    "abbr": "MD",
+    "city": "Chesapeake",
+    "state": "VA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2e5e4e"
+  },
+  {
+    "id": 117,
+    "name": "Shauntee Knox Johnson",
+    "abbr": "SK",
+    "city": "Harrisonburg",
+    "state": "VA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 3472237634",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#8b4513"
+  },
+  {
+    "id": 118,
+    "name": "Zakiyah Person",
+    "abbr": "ZP",
+    "city": "Richmond",
+    "state": "VA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 7579579272",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#556b2f"
+  },
+  {
+    "id": 119,
+    "name": "Sauleiha Akangbe",
+    "abbr": "SA",
+    "city": "Tacoma",
+    "state": "WA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 773-946-5666",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#6a5acd"
+  },
+  {
+    "id": 120,
+    "name": "Deep Medicine Healing And Midwifery",
+    "abbr": "DM",
+    "city": "Sumner",
+    "state": "WA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2067080616",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#cd853f"
+  },
+  {
+    "id": 121,
+    "name": "Something Beautiful Midwifery Care",
+    "abbr": "SB",
+    "city": "Bonney Lake",
+    "state": "WA",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 253 285 0133",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#708090"
+  },
+  {
+    "id": 122,
+    "name": "Birth In Color Midwifery LLC",
+    "abbr": "BI",
+    "city": "Milwaukee",
+    "state": "WI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 6122372746",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#9b4d3a"
+  },
+  {
+    "id": 123,
+    "name": "Latasha Brown",
+    "abbr": "LB",
+    "city": "Milwaukee",
+    "state": "WI",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 4142196649",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#4b7f52"
+  },
+  {
+    "id": 124,
+    "name": "Rebirth Midwifery",
+    "abbr": "RM",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "Call: 2025312121",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#704214"
+  },
+  {
+    "id": 125,
+    "name": "Anayah Sangodele Ayoka",
+    "abbr": "AS",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "",
+    "practiceType": "Home Birth",
+    "care": [
+      "Prenatal Care",
+      "Labor and Birth",
+      "Care After Birth/Postpartum"
+    ],
+    "payment": [
+      "Self Pay"
+    ],
+    "blackOwned": true,
+    "accepting": true,
+    "phone": "",
+    "email": "",
+    "website": "https://www.SistaMidwifedirectory.com/",
+    "bio": "Forgot your password? Click Here",
+    "specialties": "",
+    "color": "#2f4f4f"
+  }
+]

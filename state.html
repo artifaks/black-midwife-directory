@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Black Midwives — Black Midwife Directory</title>
+  <meta id="page-desc" name="description" content="Find Black homebirth midwives and birthing centers in your state." />
+
+  <meta property="og:type" content="website" />
+  <meta id="og-url" property="og:url" content="https://black-midwife-directory.netlify.app/state.html" />
+  <meta id="og-title" property="og:title" content="Black Midwives — Black Midwife Directory" />
+  <meta id="og-desc" property="og:description" content="Find Black homebirth midwives and birthing centers in your state." />
+  <meta property="og:site_name" content="Black Midwife Directory" />
+  <meta property="og:image" content="https://black-midwife-directory.netlify.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container container">
+      <div class="logo">
+        <a href="index.html"><span class="logo-text">Midwife<span class="highlight">Directory</span></span></a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+        <a href="#" class="btn-primary">For Members</a>
+      </nav>
+      <div class="mobile-btns">
+        <button class="mobile-menu-btn mobile-nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav" hidden>
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="state-hero">
+    <div class="container">
+      <h1 class="state-hero-title">Black Midwives in <span id="state-name">Your State</span></h1>
+      <p class="state-hero-sub" id="state-subtitle">Find Black-owned homebirth practices, birthing centers, and midwives.</p>
+    </div>
+  </section>
+
+  <main class="container state-main">
+    <div class="state-results-header">
+      <h2 id="state-count">Loading practices...</h2>
+      <a href="index.html" class="btn-outline">View All States</a>
+    </div>
+
+    <div id="state-grid" class="practices-grid">
+      <!-- JS injects cards -->
+    </div>
+
+    <!-- About Section -->
+    <section class="state-about" id="state-about">
+      <h2>About Midwifery in <span class="state-about-name"></span></h2>
+      <p class="state-about-text">Black midwives have a rich history of serving communities across the United States. Finding a culturally concordant midwife can lead to better birth outcomes and a more empowering birth experience. Browse the practices listed above or <a href="index.html">search the full directory</a> to find the right fit for your family.</p>
+      <div class="state-cta-row">
+        <a href="submit.html" class="btn-primary">List Your Practice</a>
+        <a href="blog.html" class="btn-outline">Read Our Guides</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Midwife<span class="highlight">Directory</span></span>
+        <p class="footer-tagline">Connecting families with Black homebirth midwives across the United States.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Directory</h4>
+        <a href="index.html">Find a Midwife</a>
+        <a href="submit.html">List Your Practice</a>
+        <a href="blog.html">Resources</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Connected</h4>
+        <p>New listings, birth resources, and guides in your inbox.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Your email address" required />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+        <p id="newsletter-msg" class="newsletter-msg" hidden></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Black Midwife Directory. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="detail-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="close-modal" class="modal-close">&times;</button>
+      <div id="modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    // ── Supabase ──
+    const SUPABASE_URL = 'https://icpgljdwmtofmdeigrmr.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljcGdsamR3bXRvZm1kZWlncm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMjUwODYsImV4cCI6MjA5MDkwMTA4Nn0.o_RZfoUS6rZe4_7Ol9M6lQA8I75Z-CEQiWig5rGOP30';
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const STATE_ABBR_TO_NAME = {
+      'AL':'Alabama','AK':'Alaska','AZ':'Arizona','AR':'Arkansas','CA':'California',
+      'CO':'Colorado','CT':'Connecticut','DE':'Delaware','DC':'District of Columbia',
+      'FL':'Florida','GA':'Georgia','HI':'Hawaii','ID':'Idaho','IL':'Illinois',
+      'IN':'Indiana','IA':'Iowa','KS':'Kansas','KY':'Kentucky','LA':'Louisiana',
+      'ME':'Maine','MD':'Maryland','MA':'Massachusetts','MI':'Michigan','MN':'Minnesota',
+      'MS':'Mississippi','MO':'Missouri','MT':'Montana','NE':'Nebraska','NV':'Nevada',
+      'NH':'New Hampshire','NJ':'New Jersey','NM':'New Mexico','NY':'New York',
+      'NC':'North Carolina','ND':'North Dakota','OH':'Ohio','OK':'Oklahoma','OR':'Oregon',
+      'PA':'Pennsylvania','RI':'Rhode Island','SC':'South Carolina','SD':'South Dakota',
+      'TN':'Tennessee','TX':'Texas','UT':'Utah','VT':'Vermont','VA':'Virginia',
+      'WA':'Washington','WV':'West Virginia','WI':'Wisconsin','WY':'Wyoming'
+    };
+
+    let PRACTICES = [];
+    const stateAbbr = new URLSearchParams(window.location.search).get('state');
+    const stateName = STATE_ABBR_TO_NAME[stateAbbr] || stateAbbr || 'Unknown';
+
+    // Update page meta
+    document.getElementById('state-name').textContent = stateName;
+    document.getElementById('page-title').textContent = `Black Midwives in ${stateName} — Black Midwife Directory`;
+    document.getElementById('page-desc').content = `Find Black homebirth midwives and birthing centers in ${stateName}. Browse verified practices near you.`;
+    document.getElementById('og-title').content = `Black Midwives in ${stateName}`;
+    document.getElementById('og-desc').content = `Find Black homebirth midwives and birthing centers in ${stateName}.`;
+    document.getElementById('state-subtitle').textContent = `Find Black-owned homebirth practices, birthing centers, and midwives in ${stateName}.`;
+    document.querySelectorAll('.state-about-name').forEach(el => el.textContent = stateName);
+
+    function formatLocation(p) { return `${p.city}, ${p.state}`; }
+
+    function buildCard(p) {
+      const owned = p.blackOwned ? '<span class="tag tag-owned">Black-Owned</span>' : '';
+      const featured = p.featured ? '<span class="featured-badge">&#9733; Featured</span>' : '';
+      const status = p.accepting
+        ? '<span class="accepting-status open">Accepting clients</span>'
+        : '<span class="accepting-status closed">Waitlist only</span>';
+      const careShown = (p.care || []).slice(0, 2).map(c => `<span class="tag tag-care">${c.replace('/Contraception','').replace('Care After Birth/','')}</span>`).join('');
+      const payShown = (p.payment || []).map(pm => `<span class="tag tag-payment">${pm}</span>`).join('');
+      const fc = p.featured ? ' card-featured' : '';
+
+      return `
+        <div class="practice-card animate-fade-up${fc}" role="button" tabindex="0"
+             onclick="openModal(${p.id})" onkeydown="if(event.key==='Enter')openModal(${p.id})">
+          <div class="card-color-bar" style="background:${p.color}"></div>
+          <div class="card-body">
+            ${featured}
+            <div class="card-top">
+              <div class="practice-avatar" style="background:${p.color}">${p.abbr}</div>
+              <div>
+                <div class="card-name">${p.name}</div>
+                <div class="card-location">${formatLocation(p)}</div>
+              </div>
+            </div>
+            <div class="card-tags">${owned}<span class="tag tag-type">${p.practiceType}</span>${careShown}</div>
+            <div class="card-tags">${payShown}</div>
+            <hr class="card-divider" />
+            <div class="card-footer">${status}
+              <button class="card-view-btn" onclick="event.stopPropagation();openModal(${p.id})">View profile &rarr;</button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function openModal(id) {
+      const p = PRACTICES.find(x => x.id === id);
+      if (!p) return;
+      const modal = document.getElementById('detail-modal');
+      const modalBody = document.getElementById('modal-body');
+      const owned = p.blackOwned ? '<span class="tag tag-owned" style="font-size:12px;padding:4px 12px">Black-Owned Practice</span>' : '';
+      const status = p.accepting
+        ? '<span style="font-size:13px;font-weight:500;color:#4a6741">Currently accepting new clients</span>'
+        : '<span style="font-size:13px;color:#9e8478">Currently on waitlist only</span>';
+      const careTags = (p.care||[]).map(c => `<span class="tag tag-care">${c}</span>`).join('');
+      const payTags = (p.payment||[]).map(pm => `<span class="tag tag-payment">${pm}</span>`).join('');
+
+      modalBody.innerHTML = `
+        <div class="modal-banner" style="background:${p.color}"><div class="modal-avatar" style="background:${p.color}">${p.abbr}</div></div>
+        <div class="modal-inner">
+          <div class="modal-name">${p.name}</div>
+          <div class="modal-subtitle">${formatLocation(p)} &bull; ${p.practiceType}</div>
+          <div class="modal-badges">${owned} ${status}</div>
+          <div class="modal-section"><div class="modal-section-title">About</div><div class="modal-text">${p.bio || 'No description available.'}</div></div>
+          <div class="modal-section"><div class="modal-section-title">Specialties</div><div class="modal-text">${p.specialties || 'Not specified.'}</div></div>
+          <hr class="modal-divider" />
+          <div class="modal-section"><div class="modal-section-title">Services</div><div class="modal-tags">${careTags || 'Not specified'}</div></div>
+          <div class="modal-section" style="margin-top:14px"><div class="modal-section-title">Payment</div><div class="modal-tags">${payTags || 'Not specified'}</div></div>
+          <hr class="modal-divider" />
+          <div class="modal-section"><div class="modal-section-title">Contact</div>
+            ${p.phone ? `<div class="contact-item"><span>${p.phone}</span></div>` : ''}
+            ${p.email ? `<div class="contact-item"><a href="mailto:${p.email}">${p.email}</a></div>` : ''}
+            ${p.website ? `<div class="contact-item"><a href="${p.website}" target="_blank">${p.website.replace('https://','')}</a></div>` : ''}
+          </div>
+          <div class="modal-cta">
+            ${p.email ? `<a href="mailto:${p.email}" class="btn-primary">Contact Practice</a>` : ''}
+            ${p.website ? `<a href="${p.website}" target="_blank" class="btn-outline">Visit Website</a>` : ''}
+          </div>
+        </div>`;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('detail-modal').classList.remove('is-open');
+      document.body.style.overflow = '';
+    });
+    document.getElementById('detail-modal').addEventListener('click', e => {
+      if (e.target === document.getElementById('detail-modal')) {
+        document.getElementById('detail-modal').classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Load practices for this state
+    async function loadState() {
+      if (!stateAbbr) {
+        document.getElementById('state-count').textContent = 'No state specified';
+        document.getElementById('state-grid').innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:40px">Please select a state from the <a href="index.html" style="color:var(--terracotta)">main directory</a>.</p>';
+        return;
+      }
+
+      const { data, error } = await db.from('practices').select('*').eq('state', stateAbbr).eq('status', 'approved').order('name');
+      if (error) {
+        document.getElementById('state-count').textContent = 'Error loading practices';
+        return;
+      }
+
+      PRACTICES = data.map(p => ({
+        id: p.id, name: p.name, abbr: p.abbr, city: p.city, state: p.state,
+        practiceType: p.practice_type, care: p.care || [], payment: p.payment || [],
+        blackOwned: p.black_owned, accepting: p.accepting, phone: p.phone,
+        email: p.email, website: p.website, bio: p.bio, specialties: p.specialties,
+        color: p.color, featured: p.featured, listingTier: p.listing_tier
+      }));
+
+      // Sort featured first
+      PRACTICES.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+
+      document.getElementById('state-count').textContent = `${PRACTICES.length} practice${PRACTICES.length !== 1 ? 's' : ''} in ${stateName}`;
+      document.getElementById('state-grid').innerHTML = PRACTICES.map(p => buildCard(p)).join('');
+
+      if (!PRACTICES.length) {
+        document.getElementById('state-grid').innerHTML = `
+          <div class="empty-state" style="grid-column:1/-1">
+            <p>No practices listed in ${stateName} yet.</p>
+            <a href="submit.html" class="btn-primary" style="margin-top:12px">Be the first to list</a>
+          </div>`;
+      }
+    }
+
+    loadState();
+
+    // Mobile Nav
+    document.querySelector('.mobile-nav-toggle')?.addEventListener('click', function() {
+      const nav = document.querySelector('.mobile-nav');
+      nav.classList.toggle("is-open");
+    });
+
+    // Newsletter
+    const nf = document.getElementById('newsletter-form');
+    const nm = document.getElementById('newsletter-msg');
+    if (nf) {
+      nf.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email')?.value?.trim();
+        if (!email) return;
+        const btn = nf.querySelector('button');
+        btn.disabled = true; btn.textContent = 'Subscribing...';
+        try {
+          const { error } = await db.from('newsletter_subscribers').insert([{ email }]);
+          if (error && error.code === '23505') { nm.textContent = "Already subscribed!"; nm.className = 'newsletter-msg newsletter-msg--info'; }
+          else if (error) throw error;
+          else { nm.textContent = "Welcome! You're subscribed."; nm.className = 'newsletter-msg newsletter-msg--success'; nf.reset(); }
+        } catch { nm.textContent = 'Something went wrong.'; nm.className = 'newsletter-msg newsletter-msg--error'; }
+        finally { nm.hidden = false; btn.disabled = false; btn.textContent = 'Subscribe'; }
+      });
+    }
+  </script>
+</body>
+</html>
