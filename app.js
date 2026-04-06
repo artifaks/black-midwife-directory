@@ -1,5 +1,5 @@
 /* ============================================================
-   Black Midwife Directory — app.js
+   Black Birth Connect — app.js
    Handles: data, filtering, card rendering, modal, animations,
             shareable links, featured listings, map view,
             autocomplete, near me, newsletter, state pages
