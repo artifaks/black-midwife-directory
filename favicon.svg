@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0f0a"/>
+      <stop offset="100%" style="stop-color:#2c1a12"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9973a"/>
+      <stop offset="100%" style="stop-color:#b85c38"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9973a"/>
+      <stop offset="100%" style="stop-color:#d4a94e"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- Mother figure - head -->
+  <circle cx="240" cy="135" r="42" fill="url(#warm)"/>
+
+  <!-- Mother figure - body, curved and graceful -->
+  <path d="M240 180
+    C270 180, 295 210, 295 250
+    C295 290, 280 330, 270 365
+    C264 385, 255 400, 240 408
+    C225 400, 216 385, 210 365
+    C200 330, 185 290, 185 250
+    C185 210, 210 180, 240 180Z"
+    fill="url(#warm)"/>
+
+  <!-- Baby figure - small circle head -->
+  <circle cx="310" cy="260" r="28" fill="url(#gold)"/>
+
+  <!-- Baby figure - small body tucked into mother -->
+  <ellipse cx="298" cy="315" rx="24" ry="35" fill="url(#gold)"/>
+
+  <!-- Embrace arc - mother's arm wrapping around baby -->
+  <path d="M270 200
+    C310 210, 345 240, 340 290
+    C338 320, 320 345, 290 355"
+    fill="none" stroke="#c9973a" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- Heart-shaped connection between mother and baby -->
+  <path d="M255 270
+    C255 255, 270 248, 280 258
+    C290 248, 305 255, 305 270
+    C305 290, 280 305, 280 305
+    C280 305, 255 290, 255 270Z"
+    fill="#fdf8f3" opacity="0.85"/>
+
+  <!-- Subtle connection dots -->
+  <circle cx="168" cy="300" r="6" fill="#c9973a" opacity="0.35"/>
+  <circle cx="155" cy="250" r="4" fill="#c9973a" opacity="0.25"/>
+  <circle cx="165" cy="200" r="5" fill="#c9973a" opacity="0.3"/>
+  <circle cx="355" cy="330" r="5" fill="#c9973a" opacity="0.3"/>
+  <circle cx="362" cy="270" r="4" fill="#c9973a" opacity="0.25"/>
+</svg>
