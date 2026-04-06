@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/black-birth-connect-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <meta name="theme-color" content="#121216">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Our Mission — Black Birth Connect</title>
+  <meta name="description" content="Help us connect Black families with trusted midwives and restore birth justice. Your donation supports our free directory and maternal health resources." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://blackbirthconnect.com/donate.html" />
+  <meta property="og:title" content="Support Our Mission — Black Birth Connect" />
+  <meta property="og:description" content="Help us connect Black families with trusted midwives and restore birth justice." />
+  <meta property="og:site_name" content="Black Birth Connect" />
+  <meta property="og:image" content="https://blackbirthconnect.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Support Our Mission — Black Birth Connect" />
+
+  <link rel="canonical" href="https://blackbirthconnect.com/donate.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    /* ── Donate Page ── */
+    .donate-hero {
+      background: linear-gradient(135deg, #1a0f0a 0%, #2c1a12 50%, #3a2218 100%);
+      padding: 90px 0 70px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .donate-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 70%, rgba(184,92,56,0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 30%, rgba(201,151,58,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .donate-hero-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 24px;
+      background: rgba(184,92,56,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .donate-hero-icon svg {
+      width: 36px;
+      height: 36px;
+      color: #d4896b;
+    }
+    .donate-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+    .donate-hero-sub {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── Impact Stats ── */
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 700px;
+      margin: 48px auto 0;
+    }
+    .impact-stat {
+      text-align: center;
+    }
+    .impact-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #c9973a;
+      display: block;
+    }
+    .impact-stat-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+
+    /* ── Mission Section ── */
+    .donate-mission {
+      padding: 64px 0;
+      background: var(--cream, #fdf8f3);
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .mission-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text-main, #1a0f0a);
+      margin: 0 0 16px;
+    }
+    .mission-text p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-muted, #6b5247);
+      margin-bottom: 14px;
+    }
+    .mission-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+    }
+    .mission-list li {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-main, #1a0f0a);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mission-list li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--terracotta, #b85c38);
+      flex-shrink: 0;
+    }
+
+    /* ── Donate Cards ── */
+    .donate-section {
+      padding: 64px 0;
+      background: #fff;
+    }
+    .donate-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      color: var(--text-main, #1a0f0a);
+      margin: 0 0 8px;
+    }
+    .donate-section-sub {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      color: var(--text-muted, #6b5247);
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    .donate-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .donate-card {
+      background: var(--cream, #fdf8f3);
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      border: 1.5px solid transparent;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .donate-card:hover {
+      border-color: var(--terracotta, #b85c38);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(184,92,56,0.12);
+    }
+    .donate-card.featured {
+      border-color: var(--terracotta, #b85c38);
+      background: linear-gradient(135deg, #fdf8f3 0%, #f0e4dc 100%);
+    }
+    .donate-card.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--terracotta, #b85c38);
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 999px;
+    }
+    .donate-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--text-main, #1a0f0a);
+      margin: 0 0 4px;
+    }
+    .donate-amount span {
+      font-size: 1rem;
+      color: var(--text-muted, #6b5247);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+    }
+    .donate-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--terracotta, #b85c38);
+      margin: 0 0 12px;
+    }
+    .donate-desc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted, #6b5247);
+      line-height: 1.6;
+      margin: 0 0 20px;
+    }
+    .donate-btn {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 12px 32px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      background: var(--terracotta, #b85c38);
+      color: #fff;
+    }
+    .donate-btn:hover {
+      background: var(--terra-dark, #8c3f22);
+      transform: scale(1.03);
+    }
+    .donate-card:not(.featured) .donate-btn {
+      background: transparent;
+      border: 1.5px solid var(--terracotta, #b85c38);
+      color: var(--terracotta, #b85c38);
+    }
+    .donate-card:not(.featured) .donate-btn:hover {
+      background: var(--terracotta, #b85c38);
+      color: #fff;
+    }
+
+    /* ── Custom Amount ── */
+    .custom-donate {
+      text-align: center;
+      margin-top: 32px;
+      padding: 28px;
+      background: var(--cream, #fdf8f3);
+      border-radius: 16px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .custom-donate p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-muted, #6b5247);
+      margin: 0 0 16px;
+    }
+    .custom-amount-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .custom-amount-row span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--text-main, #1a0f0a);
+    }
+    .custom-amount-input {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      padding: 10px 16px;
+      border: 1.5px solid rgba(0,0,0,0.12);
+      border-radius: 8px;
+      width: 120px;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .custom-amount-input:focus {
+      border-color: var(--terracotta, #b85c38);
+    }
+    .custom-donate .donate-btn {
+      margin-top: 14px;
+    }
+
+    /* ── Other Ways ── */
+    .other-ways {
+      padding: 64px 0;
+      background: var(--cream, #fdf8f3);
+    }
+    .other-ways-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 32px auto 0;
+    }
+    .other-way-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .other-way-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 14px;
+      background: rgba(184,92,56,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .other-way-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--terracotta, #b85c38);
+    }
+    .other-way-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main, #1a0f0a);
+      margin: 0 0 8px;
+    }
+    .other-way-card p {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted, #6b5247);
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .donate-hero { padding: 70px 0 50px; }
+      .impact-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .impact-stat-number { font-size: 1.8rem; }
+      .mission-grid { grid-template-columns: 1fr; gap: 32px; }
+      .donate-grid { grid-template-columns: 1fr; max-width: 380px; }
+      .other-ways-grid { grid-template-columns: 1fr; max-width: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container container">
+      <div class="logo">
+        <a href="index.html"><span class="logo-text">Black Birth<span class="highlight">Connect</span></span></a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+        <a href="agrarian.html">Agrarian Directory</a>
+        <a href="donate.html" class="btn-primary">Support Us</a>
+      </nav>
+      <div class="mobile-btns">
+        <button class="mobile-menu-btn mobile-nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav">
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+        <a href="agrarian.html">Agrarian Directory</a>
+        <a href="donate.html">Support Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="donate-hero">
+    <div class="container">
+      <div class="donate-hero-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <h1 class="donate-hero-title">Support Our Mission</h1>
+      <p class="donate-hero-sub">Every dollar helps us connect Black families with trusted midwives, amplify birth justice, and save lives through education and access.</p>
+
+      <div class="impact-stats">
+        <div class="impact-stat">
+          <span class="impact-stat-number">125+</span>
+          <span class="impact-stat-label">Midwives Listed</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat-number">50</span>
+          <span class="impact-stat-label">States Covered</span>
+        </div>
+        <div class="impact-stat">
+          <span class="impact-stat-number">22</span>
+          <span class="impact-stat-label">Black Farms Listed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Donate -->
+  <section class="donate-mission">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="mission-text">
+          <h2>Why Your Support Matters</h2>
+          <p>Black women are 3 to 4 times more likely to die from pregnancy-related causes than white women. This crisis persists regardless of income or education level.</p>
+          <p>Black Birth Connect exists to close this gap by making it easy for families to find culturally competent midwives who understand their needs and advocate for their safety.</p>
+        </div>
+        <div>
+          <ul class="mission-list">
+            <li>Maintain and grow our free midwife directory</li>
+            <li>Publish maternal health education resources</li>
+            <li>Verify and vet listed practitioners</li>
+            <li>Support the Black Agrarian Directory</li>
+            <li>Build tools for birth justice advocacy</li>
+            <li>Keep the platform ad-free and accessible</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Tiers -->
+  <section class="donate-section">
+    <div class="container">
+      <h2 class="donate-section-title">Choose Your Impact</h2>
+      <p class="donate-section-sub">Every contribution, no matter the size, moves us closer to birth equity.</p>
+
+      <div class="donate-grid">
+        <div class="donate-card">
+          <p class="donate-amount">$10</p>
+          <p class="donate-label">Seed Planter</p>
+          <p class="donate-desc">Helps us maintain the directory and keep listings accurate and up to date.</p>
+          <a href="#" class="donate-btn" data-amount="10">Donate $10</a>
+        </div>
+
+        <div class="donate-card featured">
+          <p class="donate-amount">$25</p>
+          <p class="donate-label">Birth Advocate</p>
+          <p class="donate-desc">Funds a new maternal health article and helps a family find their midwife.</p>
+          <a href="#" class="donate-btn" data-amount="25">Donate $25</a>
+        </div>
+
+        <div class="donate-card">
+          <p class="donate-amount">$50</p>
+          <p class="donate-label">Community Builder</p>
+          <p class="donate-desc">Supports outreach to list new midwives and expand our coverage to underserved areas.</p>
+          <a href="#" class="donate-btn" data-amount="50">Donate $50</a>
+        </div>
+      </div>
+
+      <div class="custom-donate">
+        <p>Want to give a different amount?</p>
+        <div class="custom-amount-row">
+          <span>$</span>
+          <input type="number" class="custom-amount-input" id="custom-amount" placeholder="100" min="1" />
+        </div>
+        <a href="#" class="donate-btn" id="custom-donate-btn">Donate Custom Amount</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Ways to Help -->
+  <section class="other-ways">
+    <div class="container">
+      <h2 class="donate-section-title">Other Ways to Help</h2>
+      <div class="other-ways-grid">
+        <div class="other-way-card">
+          <div class="other-way-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Share Our Directory</h3>
+          <p>Spread the word on social media. Every share helps a family find the care they deserve.</p>
+        </div>
+
+        <div class="other-way-card">
+          <div class="other-way-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Refer a Midwife</h3>
+          <p>Know a Black midwife not in our directory? Help us grow by submitting their practice.</p>
+        </div>
+
+        <div class="other-way-card">
+          <div class="other-way-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Monthly Giving</h3>
+          <p>Become a sustaining supporter with a recurring monthly gift to ensure long-term impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Black Birth<span class="highlight">Connect</span></span>
+        <p class="footer-tagline">Connecting Families to Black Midwives. Restoring Birth Justice.</p>
+        <p class="footer-disclaimer">Black Birth Connect&reg; neither endorses nor promotes any individual businesses or partnerships listed in our directory. Users should do their due diligence in researching providers and before hiring any member of our directory.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Directory</h4>
+        <a href="index.html">Find a Midwife</a>
+        <a href="submit.html">List Your Practice</a>
+        <a href="agrarian.html">Agrarian Directory</a>
+      </div>
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <a href="blog.html">Blog &amp; Articles</a>
+        <a href="index.html">Search by State</a>
+        <a href="blog.html">Maternal Health</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Connected</h4>
+        <p>New listings, birth resources, and guides in your inbox.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Your email address" required />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+        <p id="newsletter-msg" class="newsletter-msg" hidden></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Black Birth Connect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Mobile Nav ──
+    document.querySelector('.mobile-nav-toggle')?.addEventListener('click', function() {
+      document.querySelector('.mobile-nav')?.classList.toggle('is-open');
+    });
+
+    // ── Supabase (for newsletter) ──
+    const SUPABASE_URL = 'https://icpgljdwmtofmdeigrmr.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljcGdsamR3bXRvZm1kZWlncm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMjUwODYsImV4cCI6MjA5MDkwMTA4Nn0.o_RZfoUS6rZe4_7Ol9M6lQA8I75Z-CEQiWig5rGOP30';
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // ── Newsletter ──
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterMsg  = document.getElementById('newsletter-msg');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email')?.value?.trim();
+        if (!email) return;
+        const btn = newsletterForm.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Subscribing...';
+        try {
+          const { error } = await db.from('newsletter_subscribers').insert([{ email }]);
+          if (error && error.code === '23505') {
+            newsletterMsg.textContent = "You're already subscribed!";
+            newsletterMsg.className = 'newsletter-msg newsletter-msg--info';
+          } else if (error) {
+            throw error;
+          } else {
+            newsletterMsg.textContent = "Welcome! You're now subscribed.";
+            newsletterMsg.className = 'newsletter-msg newsletter-msg--success';
+            newsletterForm.reset();
+          }
+        } catch (err) {
+          newsletterMsg.textContent = 'Something went wrong. Please try again.';
+          newsletterMsg.className = 'newsletter-msg newsletter-msg--error';
+        } finally {
+          newsletterMsg.hidden = false;
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      });
+    }
+
+    // ── Donate Buttons ──
+    // TODO: Replace '#' with your actual payment link (PayPal, Stripe, Cash App, etc.)
+    // Example Stripe: https://buy.stripe.com/your-link
+    // Example PayPal: https://www.paypal.com/donate/?hosted_button_id=YOUR_ID
+    // Example Cash App: https://cash.app/$YourCashTag
+
+    const DONATE_BASE_URL = '#'; // <-- REPLACE WITH YOUR PAYMENT LINK
+
+    document.querySelectorAll('.donate-btn[data-amount]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const amount = btn.dataset.amount;
+        if (DONATE_BASE_URL === '#') {
+          alert('Donation link coming soon! Thank you for your support.');
+        } else {
+          window.open(DONATE_BASE_URL + '?amount=' + amount, '_blank');
+        }
+      });
+    });
+
+    document.getElementById('custom-donate-btn')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const amount = document.getElementById('custom-amount')?.value;
+      if (!amount || amount < 1) {
+        alert('Please enter an amount.');
+        return;
+      }
+      if (DONATE_BASE_URL === '#') {
+        alert('Donation link coming soon! Thank you for your support.');
+      } else {
+        window.open(DONATE_BASE_URL + '?amount=' + amount, '_blank');
+      }
+    });
+
+    // ── Service Worker ──
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
