@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Agrarian Directory — Black Midwife Directory</title>
+  <meta name="description" content="Supporting Black farmers, growers, and producers across the United States. Find Black-owned farms, nurseries, apiaries, and value-added producers." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://black-midwife-directory.netlify.app/agrarian.html" />
+  <meta property="og:title" content="Black Agrarian Directory — Black Midwife Directory" />
+  <meta property="og:description" content="Supporting Black farmers, growers, and producers across the United States." />
+  <meta property="og:site_name" content="Black Midwife Directory" />
+  <meta property="og:image" content="https://black-midwife-directory.netlify.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Black Agrarian Directory — Black Midwife Directory" />
+  <meta name="twitter:description" content="Supporting Black farmers, growers, and producers across the United States." />
+  <meta name="twitter:image" content="https://black-midwife-directory.netlify.app/og-image.png" />
+
+  <link rel="canonical" href="https://black-midwife-directory.netlify.app/agrarian.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    /* ── Agrarian Page Overrides ── */
+    .agrarian-hero {
+      background: linear-gradient(135deg, #3a5a32 0%, #4a6741 40%, #5a7a4f 100%);
+      padding: 80px 0 60px;
+      text-align: center;
+      color: #fff;
+    }
+    .agrarian-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: #fff;
+    }
+    .agrarian-hero-sub {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      opacity: 0.92;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ── Filter Bar ── */
+    .agrarian-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 0 0;
+    }
+    .region-btn {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 8px 20px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .region-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+    .region-btn.active {
+      background: #fff;
+      color: #3a5a32;
+      border-color: #fff;
+    }
+
+    /* ── Search ── */
+    .agrarian-search-wrap {
+      max-width: 480px;
+      margin: 24px auto 0;
+      position: relative;
+    }
+    .agrarian-search-wrap svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+    .agrarian-search {
+      width: 100%;
+      padding: 12px 16px 12px 44px;
+      border-radius: 999px;
+      border: none;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .agrarian-search::placeholder { color: #999; }
+    .agrarian-search:focus { outline: 2px solid #fff; outline-offset: 2px; }
+
+    /* ── Results ── */
+    .agrarian-results-header {
+      padding: 32px 0 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-muted, #8a8078);
+    }
+
+    /* ── Grid ── */
+    .agrarian-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      padding-bottom: 60px;
+    }
+
+    /* ── Cards ── */
+    .producer-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .producer-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .producer-card-top {
+      padding: 6px;
+    }
+    .producer-card-color {
+      height: 8px;
+      border-radius: 12px 12px 0 0;
+    }
+    .producer-card-body {
+      padding: 20px 22px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .producer-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+      color: var(--text-dark, #2c2420);
+    }
+    .producer-card-location {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-muted, #8a8078);
+      margin: 0 0 12px;
+    }
+    .producer-region-badge {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 12px;
+      border-radius: 999px;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .producer-types {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .producer-type-tag {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #f5f0eb;
+      color: #6a5d53;
+    }
+    .producer-products {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted, #8a8078);
+      margin: 0 0 14px;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .producer-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid #f0ebe6;
+      flex-wrap: wrap;
+    }
+    .producer-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #f5f0eb;
+      color: #6a5d53;
+      transition: background 0.2s, color 0.2s;
+    }
+    .producer-links a:hover {
+      background: #4a6741;
+      color: #fff;
+    }
+    .producer-links a svg { width: 16px; height: 16px; }
+
+    /* ── Modal ── */
+    .producer-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .producer-modal-overlay.is-open {
+      display: flex;
+    }
+    .producer-modal {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .producer-modal-banner {
+      height: 12px;
+      border-radius: 20px 20px 0 0;
+    }
+    .producer-modal-body {
+      padding: 32px;
+    }
+    .producer-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      background: rgba(0,0,0,0.08);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1.2rem;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .producer-modal-close:hover { background: rgba(0,0,0,0.15); }
+    .producer-modal-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: var(--text-dark, #2c2420);
+    }
+    .producer-modal-location {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      color: var(--text-muted, #8a8078);
+      margin: 0 0 16px;
+    }
+    .producer-modal .producer-region-badge { margin-bottom: 16px; }
+    .modal-section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #999;
+      margin: 20px 0 8px;
+    }
+    .modal-section-label:first-of-type { margin-top: 0; }
+    .producer-modal .producer-types { margin-bottom: 0; }
+    .producer-modal .producer-products {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-dark, #2c2420);
+    }
+    .modal-contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .modal-contact-list li a {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: #4a6741;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-contact-list li a:hover { text-decoration: underline; }
+    .modal-contact-list li a svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── Empty State ── */
+    .agrarian-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted, #8a8078);
+      font-family: 'Outfit', sans-serif;
+      grid-column: 1 / -1;
+    }
+    .agrarian-empty p { font-size: 1.1rem; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .agrarian-hero { padding: 70px 0 40px; }
+      .agrarian-grid { grid-template-columns: 1fr; }
+      .producer-modal-body { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container container">
+      <div class="logo">
+        <a href="index.html"><span class="logo-text">Midwife<span class="highlight">Directory</span></span></a>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+        <a href="agrarian.html">Agrarian Directory</a>
+        <a href="#" class="btn-primary">For Members</a>
+      </nav>
+      <div class="mobile-btns">
+        <button class="mobile-menu-btn mobile-nav-toggle" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="mobile-nav">
+        <a href="index.html">Practices</a>
+        <a href="submit.html">For Midwives</a>
+        <a href="blog.html">Resources</a>
+        <a href="agrarian.html">Agrarian Directory</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="agrarian-hero">
+    <div class="container">
+      <h1 class="agrarian-hero-title">Black Agrarian Directory</h1>
+      <p class="agrarian-hero-sub">Supporting Black farmers, growers, and producers across the United States.</p>
+
+      <div class="agrarian-filter-bar">
+        <button class="region-btn active" data-region="all">All</button>
+        <button class="region-btn" data-region="South">South</button>
+        <button class="region-btn" data-region="Midwest">Midwest</button>
+        <button class="region-btn" data-region="Northeast">Northeast</button>
+        <button class="region-btn" data-region="West">West</button>
+        <button class="region-btn" data-region="National/Online">National/Online</button>
+      </div>
+
+      <div class="agrarian-search-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" class="agrarian-search" id="producer-search" placeholder="Search by name, city, or state..." autocomplete="off" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <p class="agrarian-results-header" id="results-count"></p>
+    <div class="agrarian-grid" id="producer-grid">
+      <!-- JS renders cards -->
+    </div>
+  </main>
+
+  <!-- Detail Modal -->
+  <div class="producer-modal-overlay" id="producer-modal">
+    <div class="producer-modal">
+      <div class="producer-modal-banner" id="modal-banner"></div>
+      <button class="producer-modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div class="producer-modal-body" id="modal-body">
+        <!-- JS fills -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">Midwife<span class="highlight">Directory</span></span>
+        <p class="footer-tagline">Connecting families with Black homebirth midwives across the United States.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Directory</h4>
+        <a href="index.html">Find a Midwife</a>
+        <a href="submit.html">List Your Practice</a>
+        <a href="blog.html">Resources</a>
+        <a href="agrarian.html">Agrarian Directory</a>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Connected</h4>
+        <p>New listings, birth resources, and guides in your inbox.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Your email address" required />
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+        <p id="newsletter-msg" class="newsletter-msg" hidden></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Black Midwife Directory. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Supabase ──
+    const SUPABASE_URL = 'https://icpgljdwmtofmdeigrmr.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImljcGdsamR3bXRvZm1kZWlncm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMjUwODYsImV4cCI6MjA5MDkwMTA4Nn0.o_RZfoUS6rZe4_7Ol9M6lQA8I75Z-CEQiWig5rGOP30';
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // ── Region Colors ──
+    const REGION_COLORS = {
+      'South':            '#4a6741',
+      'Midwest':          '#c9973a',
+      'Northeast':        '#2d6a8a',
+      'West':             '#b85c38',
+      'National/Online':  '#5e3a5a'
+    };
+
+    // ── Producer Data ──
+    const PRODUCERS = [
+      { name: "Gypsy Acres Corporation", city: "Sharpsburg", state: "Georgia", region: "South", types: ["Farm", "Livestock/Poultry", "Other"], products: "Livestock & Animal Products", website: null, email: null, facebook: "https://www.facebook.com/share/18YY4hv3xS/?mibextid=wwXIfr", instagram: "https://instagram.com/Gypsy.Acres.Corp", tiktok: "https://tiktok.com/@Gypsy.Acres.Corp", youtube: "https://youtube.com/@gypsyacrescorp?si=zlBpJIJnSvYqLwIT" },
+      { name: "Danny's Grow Garden LLC", city: "Suwanee", state: "Georgia", region: "South", types: ["Farm", "Orchard/Perennials", "Houseplant Producer"], products: "Vegetables, Herbs, Houseplants, Trees / Perennials", website: null, email: null, facebook: "https://facebook.com/Danny's grow garden LLC", instagram: null, tiktok: null, youtube: null },
+      { name: "Owen & Raphael Farms", city: "Albuquerque", state: "New Mexico", region: "West", types: ["Farm", "Nursery/Plant Producer", "Value-Added Producer"], products: "Vegetables, Herbs, Value-added products", website: null, email: "genesisproject214@gmail.com", facebook: null, instagram: null, tiktok: null, youtube: null },
+      { name: "Golden Organic Farms", city: "Pinetops", state: "North Carolina", region: "Northeast", types: ["Farm", "Livestock/Poultry", "Value-Added Producer"], products: "Vegetables, Fruit, Herbs, Livestock & Animal Products", website: "https://www.goldenorganicfarm.com", email: "kendrickransome.gof@gmail.com", facebook: "https://www.facebook.com/GoldenOrganicFarmLLC", instagram: "https://instagram.com/GoldenOrganicFarm", tiktok: null, youtube: null },
+      { name: "Green Heffa Farms Inc.", city: "Liberty", state: "North Carolina", region: "South", types: ["Farm"], products: "Herbs, Hemp (Industrial), Value-added products", website: "https://www.greenheffafarms.com", email: "info@greenheffafarms.com", facebook: "https://facebook.com/greenheffafarms", instagram: "https://instagram.com/greenheffafarm", tiktok: "https://tiktok.com/@farmercee", youtube: "https://youtube.com/@farmercee" },
+      { name: "Brinson Farm and Hatchery", city: "Deland", state: "Florida", region: "South", types: ["Farm"], products: "Seeds/seedlings, Produce, Livestock/poultry, Herbs", website: null, email: "Brinsonfarm@myyahoo.com", facebook: "https://www.facebook.com/pastorjoy.brinson", instagram: null, tiktok: null, youtube: null },
+      { name: "Haynes Family Farms & Healing Gardens", city: "Kansas City", state: "Kansas", region: "Midwest", types: ["Farm"], products: "Flowers, Herbs, Seeds/seedlings, Produce", website: "https://hayneshealinggardens.com", email: null, facebook: null, instagram: null, tiktok: null, youtube: null },
+      { name: "Kisha Porcher", city: "Mobile", state: "Alabama", region: "South", types: ["Farm", "Nursery/Plant Producer", "Backyard/Micro-producer"], products: "Seeds/seedlings, Fruit trees, Herbs, Vegetables", website: "https://www.sweetmarthafarmacy.com", email: "sweetmarthasbodycare@gmail.com", facebook: "https://www.facebook.com/sweetmarthasholisticwellness/photos", instagram: null, tiktok: null, youtube: null },
+      { name: "2020 KEEP IT MOVING, llc", city: "Jacksonville", state: "Florida", region: "South", types: ["Farm"], products: "Houseplants", website: null, email: "kmalajati@gmail.com", facebook: null, instagram: null, tiktok: null, youtube: null },
+      { name: "Three Smart Bees Apiary & Honey Farm", city: "Liberty County", state: "Georgia", region: "South", types: ["Farm", "Beekeeper/Apiary"], products: "Honey/hive products, Flowers / Cut flowers, Value-added products", website: "https://www.threesmartbees.com", email: "info@threesmartbees.com", facebook: "https://www.facebook.com/threesmartbees", instagram: "https://instagram.com/three_smart_bees", tiktok: null, youtube: null },
+      { name: "Moore Garden & Farm LLC", city: "Muskegon", state: "Michigan", region: "Midwest", types: ["Farm"], products: "Seeds/seedlings, Produce, Livestock/poultry, Herbs", website: null, email: "ljmmoorefarms@gmail.com", facebook: "https://www.facebook.com/mooregardenandfarm/", instagram: "https://instagram.com/mooregardenfarm", tiktok: null, youtube: null },
+      { name: "Garden of Deeden", city: "Cordova", state: "Tennessee", region: "South", types: ["Farm", "Nursery/Plant Producer"], products: "Seeds/seedlings, Fruit trees, Herbs, Vegetables", website: null, email: "gardenofdeeden@gmail.com", facebook: "https://www.facebook.com/groups/5235510059861253", instagram: "https://instagram.com/gardenofdeeden", tiktok: "https://tiktok.com/@gardenofdeeden", youtube: null },
+      { name: "Timeless Traditions Foundation", city: "Dry Fork", state: "Virginia", region: "South", types: ["Farm"], products: "Produce, Flowers, Herbs", website: "https://www.timelesstraditionsfoundation.org", email: "info@timelesstraditionsfoundation.org", facebook: null, instagram: null, tiktok: null, youtube: null },
+      { name: "Black Farm Street Inc", city: "Augusta", state: "Georgia", region: "South", types: ["Farm"], products: "Fruit trees, Produce, Honey/hive products, Value-added foods", website: "https://www.blackfarmstreet.org/", email: "blackfarmstreet@gmail.com", facebook: "https://www.facebook.com/bfsheals/", instagram: "https://instagram.com/blackfarmstreet", tiktok: null, youtube: null },
+      { name: "Whitt's Farm, LLC", city: "Upper Marlboro", state: "Maryland", region: "Northeast", types: ["Farm"], products: "Produce, Value-added foods, Value-added products, Vegetables", website: "https://whitts-farm-llc.square.site/", email: null, facebook: "https://www.facebook.com/WPC15650/", instagram: "https://instagram.com/whittsfarm", tiktok: null, youtube: null },
+      { name: "Kidogo Farms", city: "Georgetown", state: "South Carolina", region: "South", types: ["Farm"], products: "Seeds/seedlings, Produce, Value-added foods, Herbs", website: "https://www.kidogofarms.com/", email: "infokidogo@gmail.com", facebook: "https://www.facebook.com/kidogofarms/", instagram: "https://instagram.com/kidogo_farms", tiktok: null, youtube: "https://youtube.com/@kidogofarms" },
+      { name: "Bouja Belle Garden", city: "Irmo", state: "South Carolina", region: "South", types: ["Farm"], products: "Produce, Vegetables, Flowers / Cut flowers, Herbs", website: null, email: "fitfaves@gmail.com", facebook: null, instagram: null, tiktok: null, youtube: null },
+      { name: "Truth and Soil Farm", city: "Vallejo", state: "California", region: "National/Online", types: ["Farm", "Seed Producer/Seed Saver", "Value-Added Producer"], products: "Herbs, Produce, Seeds/seedlings, Trees / Perennials", website: "https://truthandsoilfarm.com", email: null, facebook: "https://www.facebook.com/profile.php?id=61583408204780", instagram: null, tiktok: null, youtube: null },
+      { name: "Big Steele Urban Farm", city: "Fort Lauderdale", state: "Florida", region: "South", types: ["Farm", "Nursery/Plant Producer", "Other"], products: "Vegetables, Fruit, Herbs", website: "https://bigsteelefarms.com/", email: "bigsteelefarm@gmail.com", facebook: "https://www.facebook.com/share/1C1W9zvJiF/", instagram: "https://instagram.com/big_steele_urban_farm", tiktok: "https://tiktok.com/@bigsteeleurbanfarm", youtube: "https://youtube.com/@bigsteeleurbanfarm" },
+      { name: "Generations Forward Learning Farm", city: "Enterprise", state: "Alabama", region: "South", types: ["Farm", "Orchard/Perennials", "Mushroom Producer"], products: "Vegetables, Fruit, Herbs, Flowers", website: null, email: "drdeloreswilliams@gmail.com", facebook: null, instagram: null, tiktok: null, youtube: null },
+      { name: "Plant and Heal Co.", city: "Fort Lauderdale", state: "Florida", region: "South", types: ["Nursery/Plant Producer", "Farm", "Backyard/Micro-producer"], products: "Vegetables, Flowers, Fruit, Value-added foods", website: "https://BlackOwnedSeeds.com", email: "help@plantandheal.com", facebook: "https://www.facebook.com/GardeningUnderInfluence/", instagram: "https://instagram.com/gardeningunderinfluence", tiktok: "https://tiktok.com/@gardeningunderinfluence", youtube: "https://www.youtube.com/@gardeningunderinfluence" }
+    ];
+
+    // ── SVG Icons ──
+    const ICONS = {
+      website: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+      email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',
+      facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+      instagram: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>',
+      tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.28 8.28 0 005.58 2.16v-3.45a4.85 4.85 0 01-1.84-.36A4.83 4.83 0 0119.59 6.69z"/></svg>',
+      youtube: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>'
+    };
+
+    // ── State ──
+    let activeRegion = 'all';
+    let searchQuery = '';
+
+    // ── Helpers ──
+    function escapeHtml(str) {
+      const d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    function getRegionColor(region) {
+      return REGION_COLORS[region] || '#4a6741';
+    }
+
+    function buildSocialLinks(p, forModal) {
+      const links = [];
+      if (p.website) links.push({ url: p.website, icon: ICONS.website, label: 'Website' });
+      if (p.email) links.push({ url: 'mailto:' + p.email, icon: ICONS.email, label: 'Email' });
+      if (p.facebook) links.push({ url: p.facebook, icon: ICONS.facebook, label: 'Facebook' });
+      if (p.instagram) links.push({ url: p.instagram, icon: ICONS.instagram, label: 'Instagram' });
+      if (p.tiktok) links.push({ url: p.tiktok, icon: ICONS.tiktok, label: 'TikTok' });
+      if (p.youtube) links.push({ url: p.youtube, icon: ICONS.youtube, label: 'YouTube' });
+      if (!links.length) return '';
+      if (forModal) {
+        return links.map(l =>
+          `<li><a href="${escapeHtml(l.url)}" target="_blank" rel="noopener">${l.icon} ${l.label}</a></li>`
+        ).join('');
+      }
+      return links.map(l =>
+        `<a href="${escapeHtml(l.url)}" target="_blank" rel="noopener" title="${l.label}">${l.icon}</a>`
+      ).join('');
+    }
+
+    // ── Render Cards ──
+    function renderGrid() {
+      const grid = document.getElementById('producer-grid');
+      const countEl = document.getElementById('results-count');
+      const q = searchQuery.toLowerCase();
+
+      const filtered = PRODUCERS.filter(p => {
+        if (activeRegion !== 'all' && p.region !== activeRegion) return false;
+        if (q) {
+          const hay = (p.name + ' ' + p.city + ' ' + p.state).toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      countEl.textContent = `Showing ${filtered.length} of ${PRODUCERS.length} producers`;
+
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="agrarian-empty"><p>No producers match your current filters. Try broadening your search.</p></div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map((p, i) => {
+        const color = getRegionColor(p.region);
+        const socialHtml = buildSocialLinks(p, false);
+        return `
+          <div class="producer-card" data-index="${PRODUCERS.indexOf(p)}">
+            <div class="producer-card-color" style="background:${color}"></div>
+            <div class="producer-card-body">
+              <h3 class="producer-card-name">${escapeHtml(p.name)}</h3>
+              <p class="producer-card-location">${escapeHtml(p.city)}, ${escapeHtml(p.state)}</p>
+              <span class="producer-region-badge" style="background:${color}">${escapeHtml(p.region)}</span>
+              <div class="producer-types">
+                ${p.types.map(t => `<span class="producer-type-tag">${escapeHtml(t)}</span>`).join('')}
+              </div>
+              <p class="producer-products">${escapeHtml(p.products)}</p>
+              ${socialHtml ? `<div class="producer-links">${socialHtml}</div>` : ''}
+            </div>
+          </div>`;
+      }).join('');
+
+      // Attach card click for modal
+      grid.querySelectorAll('.producer-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          // Don't open modal if clicking a link
+          if (e.target.closest('a')) return;
+          openModal(parseInt(card.dataset.index));
+        });
+      });
+    }
+
+    // ── Modal ──
+    function openModal(index) {
+      const p = PRODUCERS[index];
+      if (!p) return;
+      const color = getRegionColor(p.region);
+      const overlay = document.getElementById('producer-modal');
+      const banner = document.getElementById('modal-banner');
+      const body = document.getElementById('modal-body');
+
+      banner.style.background = color;
+
+      const contactHtml = buildSocialLinks(p, true);
+
+      body.innerHTML = `
+        <h2 class="producer-modal-name">${escapeHtml(p.name)}</h2>
+        <p class="producer-modal-location">${escapeHtml(p.city)}, ${escapeHtml(p.state)}</p>
+        <span class="producer-region-badge" style="background:${color}">${escapeHtml(p.region)}</span>
+
+        <p class="modal-section-label">Producer Types</p>
+        <div class="producer-types">
+          ${p.types.map(t => `<span class="producer-type-tag">${escapeHtml(t)}</span>`).join('')}
+        </div>
+
+        <p class="modal-section-label">Products</p>
+        <p class="producer-products">${escapeHtml(p.products)}</p>
+
+        ${contactHtml ? `
+          <p class="modal-section-label">Connect</p>
+          <ul class="modal-contact-list">${contactHtml}</ul>
+        ` : ''}
+      `;
+
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('producer-modal').classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.getElementById('producer-modal').addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // ── Region Filters ──
+    document.querySelectorAll('.region-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.region-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeRegion = btn.dataset.region;
+        renderGrid();
+      });
+    });
+
+    // ── Search ──
+    document.getElementById('producer-search').addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderGrid();
+    });
+
+    // ── Initial Render ──
+    renderGrid();
+
+    // ── Mobile Nav ──
+    document.querySelector('.mobile-nav-toggle')?.addEventListener('click', function() {
+      const nav = document.querySelector('.mobile-nav');
+      nav.classList.toggle('is-open');
+    });
+
+    // ── Newsletter ──
+    const newsletterForm = document.getElementById('newsletter-form');
+    const newsletterMsg  = document.getElementById('newsletter-msg');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email')?.value?.trim();
+        if (!email) return;
+        const btn = newsletterForm.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = 'Subscribing...';
+        try {
+          const { error } = await db.from('newsletter_subscribers').insert([{ email }]);
+          if (error && error.code === '23505') {
+            newsletterMsg.textContent = "You're already subscribed!";
+            newsletterMsg.className = 'newsletter-msg newsletter-msg--info';
+          } else if (error) {
+            throw error;
+          } else {
+            newsletterMsg.textContent = "Welcome! You're now subscribed.";
+            newsletterMsg.className = 'newsletter-msg newsletter-msg--success';
+            newsletterForm.reset();
+          }
+        } catch (err) {
+          newsletterMsg.textContent = 'Something went wrong. Please try again.';
+          newsletterMsg.className = 'newsletter-msg newsletter-msg--error';
+        } finally {
+          newsletterMsg.hidden = false;
+          btn.disabled = false;
+          btn.textContent = 'Subscribe';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
