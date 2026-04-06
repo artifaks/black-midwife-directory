@@ -8,6 +8,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
   <meta name="theme-color" content="#121216">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Postpartum Warning Signs Every Black Mother Should Know — Black Birth Connect</title>
   <meta name="description" content="Know the critical postpartum warning signs that require immediate medical attention. Black women face disproportionate risk in the weeks and months after birth." />
@@ -184,6 +185,11 @@
         finally { newsletterMsg.hidden = false; btn.disabled = false; btn.textContent = 'Subscribe'; }
       });
     }
+  </script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  }
   </script>
 </body>
 </html>

@@ -8,6 +8,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
   <meta name="theme-color" content="#121216">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What to Expect During a Home Birth — Black Birth Connect</title>
   <meta name="description" content="A comprehensive guide to preparing for and experiencing a home birth, from prenatal visits through delivery and postpartum care." />
@@ -188,6 +189,11 @@
         }
       });
     }
+  </script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  }
   </script>
 </body>
 </html>

@@ -8,6 +8,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
   <meta name="theme-color" content="#121216">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>When Fame Is Not Enough: Black Celebrities Who Faced Maternal Health Crises — Black Birth Connect</title>
   <meta name="description" content="From Serena Williams to Beyonce to Tori Bowie, Black celebrities have shared harrowing maternal health stories that prove wealth and status cannot protect Black women from a broken system." />
@@ -200,6 +201,11 @@
         finally { newsletterMsg.hidden = false; btn.disabled = false; btn.textContent = 'Subscribe'; }
       });
     }
+  </script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  }
   </script>
 </body>
 </html>

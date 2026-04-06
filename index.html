@@ -8,6 +8,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
   <meta name="theme-color" content="#121216">
+  <link rel="manifest" href="/manifest.json">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Black Birth Connect — Find a Home Birth Midwife Near You</title>
   <meta name="description" content="Find Black homebirth midwives, birthing centers, and women's health practices in your area. 125+ verified practices across the US." />
@@ -255,5 +256,10 @@
   <div id="near-me-toast" class="toast" hidden></div>
 
   <script src="app.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  }
+  </script>
 </body>
 </html>
